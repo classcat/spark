@@ -17,7 +17,7 @@ function install_ipython () {
 
 
 function config_ipython () {
-  local PROFILE_PATH="~/.ipython/profile_spark"
+  local PROFILE_PATH=~/.ipython/profile_spark
   local PW_SHA1=`../pyscripts/pwgen.py ${NOTEBOOK_PASSWD}`
 
   ipython profile create spark
