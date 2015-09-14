@@ -31,7 +31,7 @@ function config_spark () {
 
   ln -s ${TARGET} spark
 
-  cp -p conf/log4j.properties.template conf/log4j.properties
+  cp -p spark/conf/log4j.properties.template spark/conf/log4j.properties
 }
 
 
