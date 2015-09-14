@@ -15,8 +15,9 @@ function install_ipython () {
   sudo apt-get install -y ipython ipython-notebook
 }
 
+
 function config_ipython () {
-  ipython profile create ccnb
+  ipython profile create spark
 
   mv .ipython/profile_spark/ipython_notebook_config.py .ipython/profile_spark/ipython_notebook_config.py.orig
 
@@ -43,7 +44,7 @@ function config_bash_profile () {
 
 init
 
-intall_ipython
+install_ipython
 
 config_ipython
 
