@@ -6,6 +6,8 @@
 
 export LC_ALL=C
 
+. ../conf/notebook.conf
+
 
 function init () {
   sudo apt-get update
