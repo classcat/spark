@@ -17,15 +17,16 @@ function install_ipython () {
 
 
 function config_ipython () {
-  ipython profile create spark
-
-  mv .ipython/profile_spark/ipython_notebook_config.py .ipython/profile_spark/ipython_notebook_config.py.orig
-
-  cp -p ../assets/ipython_notebook_config.py.template .ipython/profile_spark/ipython_notebook_config.py
-
+  local PROFILE_PATH="~/.ipython/profile_spark"
   local PW_SHA1=`../pyscripts/pwgen.py ${NOTEBOOK_PASSWD}`
 
-  sed -i.bak -e "s/^c\.NotebookApp\.password\s*= \s*.*/c.NotebookApp.password = u'${PW_SHA1}'/" ~/.ipython/profile_spark/ipython_notebook_config.py
+  ipython profile create spark
+
+  mv ${PROFILE_PATH}/ipython_notebook_config.py ${PROFILE_PATH}/ipython_notebook_config.py.orig
+
+  cp -p ../assets/ipython_notebook_config.py.template ${PROFILE_PATH}/ipython_notebook_config.py
+
+  sed -i.bak -e "s/^c\.NotebookApp\.password\s*= \s*.*/c.NotebookApp.password = u'${PW_SHA1}'/" ${PROFILE_PATH}/ipython_notebook_config.py
 }
 
 
