@@ -15,6 +15,9 @@ function init () {
 
 function install_ipython () {
   sudo apt-get install -y ipython ipython-notebook
+
+  sudo apt-get install -y python-numpy python-matplotlib python-nose
+  sudo apt-get install -y python-scipy python-pandas python-sympy
 }
 
 
