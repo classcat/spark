@@ -32,6 +32,8 @@ function config_spark () {
   ln -s ${TARGET} spark
 
   cp -p spark/conf/log4j.properties.template spark/conf/log4j.properties
+
+  sed -i.bak -e "s/^log4j\.rootCategory=.*/log4j.rootCategory=WARN, console/" spark/conf/log4j.properties
 }
 
 
