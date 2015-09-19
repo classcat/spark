@@ -10,7 +10,7 @@
 
 export LC_ALL=C
 
-. ../conf/my.conf
+. ../conf/spark.conf
 
 
 function check_if_continue () {
