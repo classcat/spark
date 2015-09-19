@@ -4,12 +4,32 @@
 # Copyright (C) 2015 ClassCat(R) Co.,Ltd. All rights reserved.
 ###############################################################
 
+#--- HISOTRY --------------------------------------------------
+# 19-sep-15 : 1.5.0
+#--------------------------------------------------------------
+
 export LC_ALL=C
 
 . ../conf/my.conf
 
 
+function check_if_continue () {
+  local var_continue
+
+  echo -ne "About to install Spark: ${TARGET}. Continue ? (y/n) : " >&2
+
+  read var_continue
+  if [ -z "$var_continue" ] || [ "$var_continue" != 'y' ]; then
+    echo -e "Exit the install program."
+    echo -e ""
+    exit 1
+  fi
+}
+
+
 function init () {
+  check_if_continue
+
   apt-get update
 }
 
