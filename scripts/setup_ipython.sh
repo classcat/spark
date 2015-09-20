@@ -5,6 +5,7 @@
 ###############################################################
 
 #--- HISTORY --------------------------------------------------
+# 21-sep-15 : PROFILE_PATH
 # 21-sep-15 : NOTEBOOK_PASSWD_ENABLED, MASTER_IP
 #--------------------------------------------------------------
 
@@ -30,6 +31,10 @@ function config_ipython () {
   local PW_SHA1=`../pyscripts/pwgen.py ${NOTEBOOK_PASSWD}`
 
   ipython profile create spark
+
+  if [ ! -e ${PROFILE_PATH} ]; then
+    PROFILE_PATH=~/.config/ipython/profile_spark
+  fi
 
   mv ${PROFILE_PATH}/ipython_notebook_config.py ${PROFILE_PATH}/ipython_notebook_config.py.orig
 
