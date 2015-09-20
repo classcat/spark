@@ -5,6 +5,7 @@
 ###############################################################
 
 #--- HISTORY --------------------------------------------------
+# 21-sep-15 : PROFILE_PATH removed
 # 21-sep-15 : PROFILE_PATH
 # 21-sep-15 : NOTEBOOK_PASSWD_ENABLED, MASTER_IP
 #--------------------------------------------------------------
@@ -53,7 +54,7 @@ function config_bash_profile () {
   echo 'export PATH=${SPARK_HOME}/bin:$PATH' >> ~/.bash_profile
 
   echo -e "\nexport IPYTHON=1" >> ~/.bash_profile
-  echo "export IPYTHON_OPTS=\"notebook --profile=spark --master=mesos://${MASTER_IP}\"" >> ~/.bash_profile
+  echo "export IPYTHON_OPTS=\"notebook --profile=spark\"" >> ~/.bash_profile
 }
 
 
