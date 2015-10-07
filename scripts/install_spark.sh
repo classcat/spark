@@ -49,7 +49,7 @@ function config_spark () {
 
   chown -R root.root ${TARGET}
 
-  ln -s ${TARGET} spark
+  ln -s /opt/packages/${TARGET} /opt/spark
 
   cp -p spark/conf/log4j.properties.template spark/conf/log4j.properties
 
@@ -65,7 +65,9 @@ init
 
 install_jdk
 
-cd ${PREFIX}
+mkdir -p /opt/packages
+cd /opt/packages
+#cd ${PREFIX}
 
 get_spark_archive
 
